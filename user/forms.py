@@ -10,6 +10,14 @@ class FormularioRegistracion(UserCreationForm):
         class Meta:
              model = User
              fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2' ]
+             
+        #Este código permite verificar que el correo no se repita en varios usuarios.
+        def clean_email(self):
+            email = self.cleaned_data['email']
+
+            if User.objects.filter(email=email).exists():
+                raise forms.ValidationError('Este correo electrónico ya está registrado!!')
+            return email
 
 class UserForm(forms.ModelForm):
     
