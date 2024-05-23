@@ -1,13 +1,12 @@
 from django.urls import path
-from user.views import registrar, perfil
-
+from user.views import registrar, PerfilView
 
 
 urlpatterns = [
     
 
     path('registrar/', registrar, name='registrar'),
-    path('autorizados/perfil/', perfil, name='perfil'),
+    path('autorizados/perfil/', PerfilView.as_view(), name='perfil'),
 
     
 ]

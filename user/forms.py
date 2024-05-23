@@ -10,3 +10,9 @@ class FormularioRegistracion(UserCreationForm):
         class Meta:
              model = User
              fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2' ]
+
+class UserForm(forms.ModelForm):
+    
+    class Meta:
+        model = User
+        fields = [ 'username', 'imagen', 'first_name', 'last_name', 'ocupacion', 'direccion', 'localidad',  'provincia', 'pais', 'telefono', 'bio', 'email' ]
