@@ -4,6 +4,7 @@ from user.models import User
 
 
 class FormularioRegistracion(UserCreationForm):
+    # Este codígo permite que los 3 campos indicados sean obligatorios de llenar
         first_name = forms.CharField(required=True, label='Nombre')
         last_name = forms.CharField(required=True, label='Apellido')
         email = forms.EmailField(required=True, label='Correo Electrónico')
